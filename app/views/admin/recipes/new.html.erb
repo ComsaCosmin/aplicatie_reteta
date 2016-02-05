@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-md-12">
+		<%= form_for @recipe, url: admin_recipes_path do |f| %>
+			<div class="row">
+				<div class="col-md-6">
+					<%= f.label :image%>
+					
+						<%= f.file_field :image, as: :file, id: "pictureInput", class: "hidden" %>
+						<div class="image-wrapper">
+							<div class="upload-text"><i class="fa fa-upload"></i>INCARCA IMAGINEA RETETEI TALE</div>
+					</div>
+
+					<div id="target">
+						
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<%= f.label :title%>
+					<%= f.text_field :title, class: "form-control" %>
+					<%= f.label :description %>
+					<%= f.text_field  :description, class: "form-control" %>
+				
+					<div class="row">
+						<div class="col-md-12">
+							<%= f.label :ingredient %>
+							<%= f.text_field  :ingredient, class: "form-control" %>
+						</div>
+						<div class="col-md-12">
+							<%= f.label :direction %>
+							<%= f.text_field  :direction, class: "form-control" %>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="col-md-12">
+							<%= f.label :type %>
+							<%= f.text_field :type, class: "form-control" %>
+						</div>
+						<div class="col-md-12">
+							<%= f.label :specific %>
+							<%= f.text_field :specific, class: "form-control" %>
+						</div>
+						<div class="col-md-12">
+							<%= f.label :difficulty %>
+							<%= f.text_field :difficulty, class: "form-control" %>
+						</div>
+						<div class="col-md-12">
+							<%= f.submit "Adauga noua reteta >>", 'data-disable-with' => "Se proceseaza...", class: "btn btn-default pull-right btn-recipes" %>
+						</div>				
+					</div>
+				</div>
+			</div>		
+			
+		<% end %>
+	</div>
+</div>

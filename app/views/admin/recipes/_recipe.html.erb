@@ -1,0 +1,17 @@
+<% @recipes.each do |recipe| %>
+	<div class="col-md-12">
+		<%= link_to admin_recipe_path(recipe) do %>
+			<div class="recipe-element-container">
+				<% if recipe.image.present? %>
+					<%= image_tag recipe.image.url(:thumb) %>
+				<% end %>
+				<%= recipe.title %>
+				
+			</div>
+		<% end %>
+		<%= link_to "Delete", admin_recipe_path(recipe), :confirm => "Are you sure?", :method => :delete %>
+	</div>
+
+<% end %>
+<%= link_to "Reteta noua", new_admin_recipe_path %>
+
